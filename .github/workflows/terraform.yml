@@ -62,11 +62,18 @@ jobs:
     defaults:
       run:
         shell: bash
-
+   
+      
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
+
+      # Authenticate to Azure using a service principal and a client secret stored in GitHub secrets
+    - name: Azure Login
+      uses: azure/login@v3
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}  
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
