@@ -21,6 +21,7 @@ variable "Rahul-rgaz" {
 #   type        = string
 #   default     = "rahul-rg1" 
 # }
+#test
 
 variable "Canada-rgaz" {
   description = "The name of the resource group"
